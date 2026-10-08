@@ -37,3 +37,7 @@ a[href*="yuque.com"] i {
 a[href*="yuque.com"] i::before {
   content: none;
 }
+/* Hide the banner page title on non-home menu pages. */
+#page-header.not-home-page #page-site-info {
+  display: none;
+}
