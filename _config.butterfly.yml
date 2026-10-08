@@ -137,7 +137,7 @@ aside:
       link: https://github.com/wang90
   card_announcement:
     enable: true
-    content: ''
+    content: 你好，感谢关注我
   card_recent_post:
     enable: true
     limit: 5
