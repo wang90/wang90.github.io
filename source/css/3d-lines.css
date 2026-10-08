@@ -1,0 +1,39 @@
+/* Homepage hero: 3D line-segment canvas layer */
+#page-header .three-lines-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.92;
+}
+
+#page-header #nav,
+#page-header #site-info,
+#page-header #scroll-down {
+  z-index: 2;
+}
+
+/* Hide the navbar site title on the homepage hero. */
+#page-header.full_page #blog-info {
+  display: none;
+}
+
+/* Right-align the homepage navigation menu. */
+#page-header.full_page #nav {
+  justify-content: flex-end;
+}
+
+/* Use the Yuque logo instead of a generic Font Awesome icon. */
+a[href*="yuque.com"] i {
+  display: inline-block;
+  width: 1.12em;
+  height: 1.12em;
+  vertical-align: -0.14em;
+  background: url('/img/yuque.png') center / contain no-repeat;
+}
+
+a[href*="yuque.com"] i::before {
+  content: none;
+}
