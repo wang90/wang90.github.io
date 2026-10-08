@@ -6,7 +6,6 @@ nav:
 menu:
   首页: / || fas fa-home
   关于: /about/ || fas fa-user
-  简历: /resume/ || fas fa-file-alt
   爱好: /hobbies/ || fas fa-heart
   归档: /archives/ || fas fa-archive
 code_blocks:
