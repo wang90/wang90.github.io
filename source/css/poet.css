@@ -266,3 +266,71 @@ html.poet-mode #article-container .poet-quote-grid cite {
     margin-top: 8px;
   }
 }
+
+.poet-toc {
+  margin-top: 38px;
+  padding: 24px 26px;
+  border: 1px solid rgba(78, 60, 42, 0.14);
+  border-radius: 10px;
+  background: rgba(255, 252, 246, 0.78);
+  box-shadow: 0 10px 28px rgba(78, 60, 42, 0.05);
+}
+
+.poet-toc h2 {
+  margin: 0 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid #9e2b25;
+  font-size: 24px;
+  letter-spacing: 0.08em;
+}
+
+.poet-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+}
+
+.poet-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 6px;
+  color: #5b4a3a;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.poet-toc a:hover {
+  background: rgba(158, 43, 37, 0.07);
+  color: #9e2b25;
+}
+
+.poet-toc a span {
+  color: #9e2b25;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+html.poet-mode #article-container .poet-toc a {
+  color: #5b4a3a;
+}
+
+html.poet-mode #article-container .poet-toc a:hover {
+  color: #9e2b25;
+}
+
+html.poet-mode #article-container .poet-toc a span {
+  color: #9e2b25;
+}
+
+@media screen and (max-width: 760px) {
+  .poet-toc {
+    padding: 20px 16px;
+  }
+
+  .poet-toc-grid {
+    grid-template-columns: 1fr;
+  }
+}
