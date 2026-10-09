@@ -20,12 +20,12 @@ type: acg
     <section class="acg-hero">
       <p class="acg-kicker">My personal anime archive</p>
       <h1 class="acg-title">我的二次元收藏</h1>
-      <p class="acg-intro">这里是一个独立于博客主站之外的二次元系列。第一篇文章先记录我最喜欢的三部漫画：柯南、鬼灭之刃和新世纪福音战士。</p>
+      <p class="acg-intro">这里是一个独立于博客主站之外的二次元系列。目前收录我最喜欢的六部漫画：柯南、鬼灭之刃、新世纪福音战士、灌篮高手、圣斗士星矢和古惑仔。</p>
     </section>
     <section id="manga" class="acg-section">
       <div class="acg-section-head">
         <h2>漫画</h2>
-        <p>柯南 · 鬼灭之刃 · 新世纪福音战士</p>
+        <p>柯南 · 鬼灭之刃 · EVA · 灌篮高手 · 圣斗士星矢 · 古惑仔</p>
       </div>
       <div class="acg-grid">
         <article class="acg-card">
@@ -56,6 +56,36 @@ type: acg
             <p>披着机甲战斗外衣的心理剧。它讨论孤独、逃避、自我认同和人与人之间的距离，是那种看完之后还会反复想很久的作品。</p>
             <p class="acg-card-quote">“不能逃避。”</p>
             <div class="acg-tags"><span>科幻</span><span>机甲</span><span>心理</span><span>漫画版</span></div>
+          </div>
+        </article>
+        <article class="acg-card">
+          <div class="acg-card-cover"><img class="acg-cover-img" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30051-5KJyPlO7z5F4.png" alt="灌篮高手漫画封面" loading="lazy" /><span class="acg-cover-label">SLAM DUNK</span></div>
+          <div class="acg-card-body">
+            <h3>《灌篮高手》</h3>
+            <p class="acg-card-meta">井上雄彦 · 1990 - 1996 · 已完结 · 五星推荐</p>
+            <p>樱木花道从不懂篮球到站上全国大赛，青春、热血、遗憾和成长全都写在球场上。没有超能力，只有少年们拼尽全力的每一场比赛。</p>
+            <p class="acg-card-quote">“教练，我想打篮球。”</p>
+            <div class="acg-tags"><span>篮球</span><span>青春</span><span>热血</span></div>
+          </div>
+        </article>
+        <article class="acg-card">
+          <div class="acg-card-cover"><img class="acg-cover-img" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx31045-YUcWBMk7RpeK.png" alt="圣斗士星矢漫画封面" loading="lazy" /><span class="acg-cover-label">SAINT SEIYA</span></div>
+          <div class="acg-card-body">
+            <h3>《圣斗士星矢》</h3>
+            <p class="acg-card-meta">车田正美 · 1985 - 1990 · 已完结 · 五星推荐</p>
+            <p>星矢和伙伴们为了守护雅典娜不断挑战强敌。圣衣、星座和“小宇宙”的设定，是很多人童年最热血的记忆之一。</p>
+            <p class="acg-card-quote">“燃烧吧，我的小宇宙。”</p>
+            <div class="acg-tags"><span>神话</span><span>热血</span><span>战斗</span></div>
+          </div>
+        </article>
+        <article class="acg-card">
+          <div class="acg-card-cover"><img class="acg-cover-img" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/102110-9L8bFLNgO1r1.jpg" alt="古惑仔漫画封面" loading="lazy" /><span class="acg-cover-label">TEDDY BOY</span></div>
+          <div class="acg-card-body">
+            <h3>《古惑仔》</h3>
+            <p class="acg-card-meta">牛佬 · 1992 年起连载 · 香港长篇黑帮漫画 · 五星推荐</p>
+            <p>以陈浩南、山鸡等人为核心，描绘香港江湖里的兄弟情义、权力斗争和身不由己。它是一代人的港漫记忆，也是一部很长的江湖群像。</p>
+            <p class="acg-card-quote">“人在江湖，身不由己。”</p>
+            <div class="acg-tags"><span>港漫</span><span>江湖</span><span>黑帮</span></div>
           </div>
         </article>
       </div>
