@@ -544,3 +544,10 @@ html.poet-mode #article-container p.poet-read-tip {
     margin-top: 8px;
   }
 }
+
+/* Align the fixed TOC flush with the left edge of the main reading column. */
+@media screen and (min-width: 1280px) {
+  .poet-sidebar {
+    left: max(70px, calc((100% - 1040px) / 2 - 180px));
+  }
+}
