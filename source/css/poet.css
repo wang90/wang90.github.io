@@ -1,0 +1,268 @@
+/* Standalone Xin Qiji poetry reading layout */
+html.poet-mode {
+  background: #f4efe4;
+}
+
+html.poet-mode body {
+  background: #f4efe4;
+  overflow-x: hidden;
+}
+
+html.poet-mode #page-header,
+html.poet-mode #footer,
+html.poet-mode #rightside,
+html.poet-mode .aside-content {
+  display: none;
+}
+
+html.poet-mode #content-inner,
+html.poet-mode #page,
+html.poet-mode .container,
+html.poet-mode #article-container {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.poet-shell {
+  min-height: 100vh;
+  color: #2f2922;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", serif;
+  background:
+    radial-gradient(circle at 10% 6%, rgba(158, 43, 37, 0.06), transparent 28%),
+    radial-gradient(circle at 92% 12%, rgba(99, 78, 54, 0.08), transparent 30%),
+    linear-gradient(180deg, #f7f2e8 0%, #f1eadc 100%);
+}
+
+.poet-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 28px;
+  background: rgba(247, 242, 232, 0.9);
+  border-bottom: 1px solid rgba(78, 60, 42, 0.16);
+  backdrop-filter: blur(12px);
+}
+
+.poet-back,
+.poet-nav a {
+  color: #5b4a3a;
+  text-decoration: none;
+}
+
+.poet-back:hover,
+.poet-nav a:hover {
+  color: #9e2b25;
+}
+
+.poet-brand {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.poet-nav-links {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.poet-main {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0 100px;
+}
+
+.poet-hero {
+  padding: 48px 0 36px;
+  border-bottom: 1px solid rgba(78, 60, 42, 0.14);
+}
+
+.poet-kicker {
+  margin: 0 0 12px;
+  color: #9e2b25;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+}
+
+.poet-hero h1 {
+  margin: 0;
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+}
+
+.poet-intro {
+  max-width: 760px;
+  margin: 22px 0 0;
+  color: #6b5a49;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.poet-section {
+  margin-top: 70px;
+}
+
+.poet-section h2 {
+  margin: 0 0 24px;
+  padding-left: 14px;
+  border-left: 4px solid #9e2b25;
+  font-size: 27px;
+  letter-spacing: 0.08em;
+}
+
+.poet-quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.poet-quote-grid blockquote {
+  margin: 0;
+  padding: 20px 22px;
+  border: 1px solid rgba(78, 60, 42, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 252, 246, 0.72);
+  box-shadow: 0 8px 24px rgba(78, 60, 42, 0.05);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.poet-quote-grid cite {
+  display: block;
+  margin-top: 10px;
+  color: #8a7763;
+  font-size: 13px;
+  font-style: normal;
+}
+
+.poet-poem {
+  margin-bottom: 22px;
+  padding: 26px 28px;
+  border: 1px solid rgba(78, 60, 42, 0.13);
+  border-radius: 10px;
+  background: rgba(255, 252, 246, 0.76);
+  box-shadow: 0 10px 28px rgba(78, 60, 42, 0.055);
+}
+
+.poet-poem-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed rgba(78, 60, 42, 0.18);
+}
+
+.poet-poem-head h3 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+}
+
+.poet-poem-head span {
+  color: #9e2b25;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.poet-poem-text {
+  color: #2b241d;
+  font-size: 18px;
+  line-height: 2.15;
+  letter-spacing: 0.05em;
+}
+
+.poet-note {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(78, 60, 42, 0.18);
+  color: #7a6a58;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.poet-footer {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 0 0 56px;
+  color: #8a7763;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Keep the reading page readable regardless of the blog light/dark mode. */
+html.poet-mode #article-container .poet-shell,
+html.poet-mode #article-container .poet-shell h1,
+html.poet-mode #article-container .poet-shell h2,
+html.poet-mode #article-container .poet-shell h3,
+html.poet-mode #article-container .poet-shell p,
+html.poet-mode #article-container .poet-shell span,
+html.poet-mode #article-container .poet-shell a,
+html.poet-mode #article-container .poet-shell div,
+html.poet-mode #article-container .poet-shell blockquote,
+html.poet-mode #article-container .poet-shell cite {
+  color: #2f2922;
+}
+
+html.poet-mode #article-container .poet-kicker {
+  color: #9e2b25;
+}
+
+html.poet-mode #article-container .poet-intro {
+  color: #6b5a49;
+}
+
+html.poet-mode #article-container .poet-note {
+  color: #7a6a58;
+}
+
+html.poet-mode #article-container .poet-poem-head span {
+  color: #9e2b25;
+}
+
+html.poet-mode #article-container .poet-quote-grid cite {
+  color: #8a7763;
+}
+
+@media screen and (max-width: 760px) {
+  .poet-nav {
+    padding: 13px 16px;
+  }
+
+  .poet-nav-links {
+    display: none;
+  }
+
+  .poet-main {
+    width: calc(100% - 28px);
+    padding-top: 40px;
+  }
+
+  .poet-quote-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poet-poem {
+    padding: 22px 18px;
+  }
+
+  .poet-poem-head {
+    display: block;
+  }
+
+  .poet-poem-head span {
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
