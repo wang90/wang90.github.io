@@ -334,3 +334,69 @@ html.poet-mode #article-container .poet-toc a span {
     grid-template-columns: 1fr;
   }
 }
+
+/* Left sticky table of contents with scrollspy highlighting. */
+html.poet-mode {
+  scroll-behavior: smooth;
+}
+
+.poet-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 38px;
+  margin-top: 40px;
+}
+
+.poet-sidebar {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.poet-toc {
+  margin-top: 0;
+}
+
+.poet-toc-grid {
+  grid-template-columns: 1fr;
+}
+
+.poet-toc a.active {
+  background: rgba(158, 43, 37, 0.09);
+  color: #9e2b25;
+  box-shadow: inset 3px 0 0 #9e2b25;
+}
+
+.poet-poem {
+  scroll-margin-top: 86px;
+}
+
+html.poet-mode #article-container .poet-toc a.active {
+  color: #9e2b25;
+}
+
+@media screen and (max-width: 980px) {
+  .poet-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .poet-sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    margin-top: 30px;
+  }
+
+  .poet-toc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .poet-toc-grid {
+    grid-template-columns: 1fr;
+  }
+}

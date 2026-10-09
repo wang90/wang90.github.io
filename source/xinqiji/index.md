@@ -22,6 +22,8 @@ type: xinqiji
       <h1>辛弃疾词选</h1>
       <p class="poet-intro">辛弃疾是我最喜欢的词人。他写金戈铁马，也写灯火阑珊；写家国天下，也写稻花香里的丰年。这个页面把他的名句和代表词作整理在一起，按主题分类，方便慢慢读。</p>
     </section>
+    <div class="poet-layout">
+      <aside class="poet-sidebar">
     <section id="toc" class="poet-toc">
       <h2>目录</h2>
       <div class="poet-toc-grid">
@@ -37,6 +39,8 @@ type: xinqiji
         <a href="#poem-chounuer"><span>10</span>丑奴儿·书博山道中壁</a>
       </div>
     </section>
+      </aside>
+      <div class="poet-content">
     <section id="famous" class="poet-section">
       <h2>名句速览</h2>
       <div class="poet-quote-grid">
@@ -114,6 +118,8 @@ type: xinqiji
         <p class="poet-note">名句：少年不识愁滋味，爱上层楼。 / 欲说还休，却道天凉好个秋。</p>
       </article>
     </section>
+      </div>
+    </div>
   </main>
   <footer class="poet-footer">辛弃疾词选 · 慢慢读，慢慢抄。</footer>
 </div>

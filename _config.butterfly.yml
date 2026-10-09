@@ -506,6 +506,7 @@ inject:
   bottom:
     - <script src="/js/3d-lines.js" defer></script>
     - <script src="/js/home-scroll.js" defer></script>
+    - <script src="/js/poet-toc.js" defer></script>
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
