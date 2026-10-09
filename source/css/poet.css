@@ -481,3 +481,66 @@ html.poet-mode #article-container .poet-toc a.active {
     grid-template-columns: 1fr;
   }
 }
+
+/* Per-poem browser reading controls. */
+.poet-poem-head {
+  justify-content: flex-start;
+}
+
+.poet-poem-head h3 {
+  margin-right: auto;
+}
+
+.poet-read {
+  flex: 0 0 auto;
+  padding: 5px 12px;
+  border: 1px solid #9e2b25;
+  border-radius: 999px;
+  background: transparent;
+  color: #9e2b25;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+}
+
+.poet-read:hover {
+  background: #9e2b25;
+  color: #fffaf2;
+}
+
+.poet-read.is-reading {
+  background: #9e2b25;
+  color: #fffaf2;
+}
+
+.poet-read:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.poet-read-tip {
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+
+html.poet-mode #article-container button.poet-read {
+  color: #9e2b25;
+}
+
+html.poet-mode #article-container button.poet-read:hover,
+html.poet-mode #article-container button.poet-read.is-reading {
+  color: #fffaf2;
+}
+
+html.poet-mode #article-container p.poet-read-tip {
+  color: #8a7763;
+}
+
+@media screen and (max-width: 760px) {
+  .poet-poem-head .poet-read {
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
