@@ -29,7 +29,7 @@ type: acg
       </div>
       <div class="acg-grid">
         <article class="acg-card">
-          <div class="acg-card-cover">CONAN</div>
+          <div class="acg-card-cover"><img class="acg-cover-img" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx41176-IkOUYyagp3OP.jpg" alt="名侦探柯南漫画封面" loading="lazy" /><span class="acg-cover-label">CONAN</span></div>
           <div class="acg-card-body">
             <h3>《名侦探柯南》</h3>
             <p class="acg-card-meta">青山刚昌 · 1994 - 连载中 · 五星推荐</p>
@@ -39,7 +39,7 @@ type: acg
           </div>
         </article>
         <article class="acg-card">
-          <div class="acg-card-cover">DEMON SLAYER</div>
+          <div class="acg-card-cover"><img class="acg-cover-img" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx87216-c9bSNVD10UuD.png" alt="鬼灭之刃漫画封面" loading="lazy" /><span class="acg-cover-label">DEMON SLAYER</span></div>
           <div class="acg-card-body">
             <h3>《鬼灭之刃》</h3>
             <p class="acg-card-meta">吾峠呼世晴 · 2016 - 2020 · 已完结 · 五星推荐</p>
@@ -49,7 +49,7 @@ type: acg
           </div>
         </article>
         <article class="acg-card">
-          <div class="acg-card-cover">EVANGELION</div>
+          <div class="acg-card-cover"><img class="acg-cover-img" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30698-0niTa3yn2rNK.png" alt="新世纪福音战士漫画封面" loading="lazy" /><span class="acg-cover-label">EVANGELION</span></div>
           <div class="acg-card-body">
             <h3>《新世纪福音战士》</h3>
             <p class="acg-card-meta">贞本义行 · 1994 - 2013 · 漫画已完结 · 五星推荐</p>
