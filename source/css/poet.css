@@ -400,3 +400,84 @@ html.poet-mode #article-container .poet-toc a.active {
     grid-template-columns: 1fr;
   }
 }
+
+/* Fixed left rail instead of a column inside the main reading layout. */
+.poet-layout {
+  display: block;
+  margin-top: 0;
+}
+
+.poet-content {
+  display: block;
+}
+
+.poet-sidebar {
+  position: fixed;
+  top: 84px;
+  left: 22px;
+  z-index: 5;
+  width: 180px;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+  margin: 0;
+  padding-right: 4px;
+}
+
+.poet-toc-grid {
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 1280px) {
+  .poet-main {
+    width: min(1040px, calc(100% - 300px));
+    margin-left: max(250px, calc((100% - 1040px) / 2));
+    margin-right: auto;
+  }
+
+  .poet-toc {
+    margin-top: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .poet-toc h2 {
+    margin-bottom: 14px;
+    padding-left: 10px;
+    border-left: 3px solid #9e2b25;
+    font-size: 19px;
+  }
+
+  .poet-toc a {
+    padding: 7px 8px;
+    font-size: 14px;
+  }
+
+  .poet-toc a span {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .poet-sidebar {
+    position: static;
+    width: auto;
+    max-width: 720px;
+    max-height: none;
+    overflow: visible;
+    margin: 30px auto 0;
+    padding: 0 24px;
+  }
+
+  .poet-toc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .poet-toc-grid {
+    grid-template-columns: 1fr;
+  }
+}

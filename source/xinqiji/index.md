@@ -27,16 +27,16 @@ type: xinqiji
     <section id="toc" class="poet-toc">
       <h2>目录</h2>
       <div class="poet-toc-grid">
-        <a href="#poem-pozhenzi"><span>01</span>破阵子·为陈同甫赋壮词以寄之</a>
-        <a href="#poem-yongyule"><span>02</span>永遇乐·京口北固亭怀古</a>
-        <a href="#poem-nanxiangzi"><span>03</span>南乡子·登京口北固亭有怀</a>
-        <a href="#poem-pusaman"><span>04</span>菩萨蛮·书江西造口壁</a>
-        <a href="#poem-shuilongyin"><span>05</span>水龙吟·登建康赏心亭</a>
-        <a href="#poem-qingyuan"><span>06</span>青玉案·元夕</a>
-        <a href="#poem-moyuer"><span>07</span>摸鱼儿·更能消几番风雨</a>
-        <a href="#poem-xijiangyue"><span>08</span>西江月·夜行黄沙道中</a>
-        <a href="#poem-qingpingyue"><span>09</span>清平乐·村居</a>
-        <a href="#poem-chounuer"><span>10</span>丑奴儿·书博山道中壁</a>
+        <a href="#poem-pozhenzi"><span>01</span>破阵子</a>
+        <a href="#poem-yongyule"><span>02</span>永遇乐</a>
+        <a href="#poem-nanxiangzi"><span>03</span>南乡子</a>
+        <a href="#poem-pusaman"><span>04</span>菩萨蛮</a>
+        <a href="#poem-shuilongyin"><span>05</span>水龙吟</a>
+        <a href="#poem-qingyuan"><span>06</span>青玉案</a>
+        <a href="#poem-moyuer"><span>07</span>摸鱼儿</a>
+        <a href="#poem-xijiangyue"><span>08</span>西江月</a>
+        <a href="#poem-qingpingyue"><span>09</span>清平乐</a>
+        <a href="#poem-chounuer"><span>10</span>丑奴儿</a>
       </div>
     </section>
       </aside>
