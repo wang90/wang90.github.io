@@ -494,6 +494,10 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/css/3d-lines.css">
+    - <link rel="stylesheet" href="/css/acg.css">
+    - >-
+      <script>if (location.pathname.indexOf('/acg/') === 0) { document.documentElement.classList.add('acg-mode');
+      }</script>
   bottom:
     - <script src="/js/3d-lines.js" defer></script>
     - <script src="/js/home-scroll.js" defer></script>
