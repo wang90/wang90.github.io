@@ -279,3 +279,17 @@ html.acg-mode #article-container {
   background: transparent;
   box-shadow: none;
 }
+
+.acg-card-meta {
+  margin: 0 0 12px;
+  color: #8fa0c8;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.acg-card-quote {
+  margin: 12px 0 0;
+  padding-left: 10px;
+  border-left: 2px solid rgba(140, 170, 255, 0.5);
+  color: #d3ddff;
+}
