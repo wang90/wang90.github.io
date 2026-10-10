@@ -46,8 +46,8 @@ function init(THREE, container) {
   container.appendChild(renderer.domElement);
 
   var scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0b0e17);
-  scene.fog = new THREE.Fog(0x0b0e17, 9, 19);
+  scene.background = new THREE.Color(0x03040c);
+  scene.fog = new THREE.Fog(0x03040c, 7, 20);
 
   var target = new THREE.Vector3(0, 2.2, -1.4);
   var camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 60);
@@ -116,14 +116,14 @@ function init(THREE, container) {
     dragging = false;
   });
 
-  var hemi = new THREE.HemisphereLight(0x9bb8ff, 0x2a1a12, 0.82);
+  var hemi = new THREE.HemisphereLight(0x2b1f6b, 0x12061f, 0.55);
   scene.add(hemi);
 
-  var dirLight = new THREE.DirectionalLight(0xfff0d0, 1.35);
+  var dirLight = new THREE.DirectionalLight(0x7ef9ff, 0.72);
   dirLight.position.set(5, 8, 6);
   scene.add(dirLight);
 
-  var fillLight = new THREE.PointLight(0x6c8cff, 0.7, 14);
+  var fillLight = new THREE.PointLight(0xff3bd4, 1.05, 16);
   fillLight.position.set(-4.5, 3.4, 2.5);
   scene.add(fillLight);
 
@@ -132,28 +132,28 @@ function init(THREE, container) {
 
   var floor = new THREE.Mesh(
     new THREE.PlaneGeometry(14, 14),
-    new THREE.MeshStandardMaterial({ color: 0x2a1d18, roughness: 0.94, metalness: 0.02 })
+    new THREE.MeshStandardMaterial({ color: 0x05060f, roughness: 0.82, metalness: 0.18 })
   );
   floor.rotation.x = -Math.PI / 2;
   room.add(floor);
 
   var backWall = new THREE.Mesh(
     new THREE.PlaneGeometry(14, 7),
-    new THREE.MeshStandardMaterial({ color: 0x1d2230, roughness: 0.98 })
+    new THREE.MeshStandardMaterial({ color: 0x070a18, roughness: 0.98 })
   );
   backWall.position.set(0, 3.5, -5.2);
   room.add(backWall);
 
   var rug = new THREE.Mesh(
     new THREE.PlaneGeometry(5.4, 3.6),
-    new THREE.MeshStandardMaterial({ color: 0x333a66, roughness: 0.92 })
+    new THREE.MeshStandardMaterial({ color: 0x14082a, roughness: 0.86, metalness: 0.08 })
   );
   rug.rotation.x = -Math.PI / 2;
   rug.position.set(0, 0.012, 1.1);
   room.add(rug);
 
-  var wood = new THREE.MeshStandardMaterial({ color: 0x6b4a2f, roughness: 0.72, metalness: 0.04 });
-  var woodDark = new THREE.MeshStandardMaterial({ color: 0x4c3322, roughness: 0.8, metalness: 0.03 });
+  var wood = new THREE.MeshStandardMaterial({ color: 0x111827, roughness: 0.38, metalness: 0.78 });
+  var woodDark = new THREE.MeshStandardMaterial({ color: 0x090d18, roughness: 0.42, metalness: 0.82 });
   var shelf = new THREE.Group();
   shelf.position.set(0, 0, -4.25);
   scene.add(shelf);
@@ -194,8 +194,8 @@ function init(THREE, container) {
   }
 
   var spineColors = [
-    0x2f5fcf, 0x1f8a70, 0x7b2d8e, 0xc0392b, 0xd35400, 0x2c3e50, 0xe67e22,
-    0x3d8bfd, 0xff6ac8, 0x00b894, 0x8e44ad, 0xe84393
+    0x00e5ff, 0xff3bd4, 0x7b2dff, 0x2de2e6, 0xff2e97, 0x00ffc8, 0x9b5cff,
+    0x18d6ff, 0xff6ac8, 0x00b3ff, 0xb16cff, 0xff4d6d
   ];
 
   function addSpines(y, maxHeight) {
@@ -208,7 +208,7 @@ function init(THREE, container) {
       var bh = Math.max(0.34, maxHeight - Math.random() * 0.16);
       var bd = D * 0.66 + Math.random() * 0.08;
       var color = spineColors[Math.floor(Math.random() * spineColors.length)];
-      var material = new THREE.MeshStandardMaterial({ color: color, roughness: 0.58, metalness: 0.04 });
+      var material = new THREE.MeshStandardMaterial({ color: color, emissive: color, emissiveIntensity: 0.38, roughness: 0.42, metalness: 0.18 });
       addBox(
         shelf,
         bw,
@@ -277,8 +277,8 @@ function init(THREE, container) {
   for (var f = 0; f < favorites.length; f += 1) {
     var item = favorites[f];
     var coverTexture = makeCoverTexture(item.title, item.color);
-    var sideMaterial = new THREE.MeshStandardMaterial({ color: item.color, roughness: 0.62, metalness: 0.03 });
-    var frontMaterial = new THREE.MeshStandardMaterial({ map: coverTexture, roughness: 0.48, metalness: 0.02 });
+    var sideMaterial = new THREE.MeshStandardMaterial({ color: item.color, emissive: item.color, emissiveIntensity: 0.55, roughness: 0.42, metalness: 0.18 });
+    var frontMaterial = new THREE.MeshStandardMaterial({ map: coverTexture, emissive: item.color, emissiveMap: coverTexture, emissiveIntensity: 0.34, roughness: 0.38, metalness: 0.16 });
     var pageMaterial = new THREE.MeshStandardMaterial({ color: 0xf4ecd9, roughness: 0.9 });
     var bookWidth = 0.52;
     var bookHeight = 0.72;
@@ -335,14 +335,107 @@ function init(THREE, container) {
   var dust = new THREE.Points(
     dustGeometry,
     new THREE.PointsMaterial({
-      color: 0xffe4b5,
+      color: 0x7ef9ff,
       size: 0.025,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.72,
       depthWrite: false
     })
   );
   scene.add(dust);
+
+  // Cyberpunk floor grid.
+  var grid = new THREE.GridHelper(18, 36, 0x00e5ff, 0x7b2dff);
+  grid.position.y = 0.025;
+  grid.material.transparent = true;
+  grid.material.opacity = 0.38;
+  room.add(grid);
+
+  var neonCyan = new THREE.MeshStandardMaterial({
+    color: 0x00e5ff,
+    emissive: 0x00e5ff,
+    emissiveIntensity: 2.2,
+    roughness: 0.28,
+    metalness: 0.42
+  });
+  var neonPink = new THREE.MeshStandardMaterial({
+    color: 0xff3bd4,
+    emissive: 0xff3bd4,
+    emissiveIntensity: 2.0,
+    roughness: 0.3,
+    metalness: 0.42
+  });
+  var neonPurple = new THREE.MeshStandardMaterial({
+    color: 0x7b2dff,
+    emissive: 0x7b2dff,
+    emissiveIntensity: 1.8,
+    roughness: 0.32,
+    metalness: 0.4
+  });
+
+  addBox(shelf, 0.05, H - 0.26, 0.06, -W / 2 + side + 0.05, H / 2, D / 2 + 0.02, neonCyan, 0);
+  addBox(shelf, 0.05, H - 0.26, 0.06, W / 2 - side - 0.05, H / 2, D / 2 + 0.02, neonPink, 0);
+  for (var shelfIndex = 0; shelfIndex < shelfY.length; shelfIndex += 1) {
+    var shelfNeon = shelfIndex % 2 === 0 ? neonCyan : neonPink;
+    addBox(shelf, W - side * 2 - 0.12, 0.035, 0.06, 0, shelfY[shelfIndex] + boardT / 2 + 0.015, D / 2 + 0.02, shelfNeon, 0);
+  }
+
+  function makeNeonSign(text, colorA, colorB) {
+    var signCanvas = document.createElement("canvas");
+    signCanvas.width = 1024;
+    signCanvas.height = 256;
+    var signCtx = signCanvas.getContext("2d");
+    signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height);
+    signCtx.textAlign = "center";
+    signCtx.textBaseline = "middle";
+    signCtx.font = "bold 112px \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+    var hexA = "#" + new THREE.Color(colorA).getHexString();
+    var hexB = "#" + new THREE.Color(colorB).getHexString();
+    signCtx.shadowColor = hexA;
+    signCtx.shadowBlur = 34;
+    signCtx.fillStyle = "#ffffff";
+    signCtx.fillText(text, 512, 128);
+    signCtx.shadowBlur = 0;
+    var signGradient = signCtx.createLinearGradient(0, 0, 1024, 0);
+    signGradient.addColorStop(0, hexA);
+    signGradient.addColorStop(1, hexB);
+    signCtx.globalCompositeOperation = "source-atop";
+    signCtx.fillStyle = signGradient;
+    signCtx.fillRect(0, 0, 1024, 256);
+    var signTexture = new THREE.CanvasTexture(signCanvas);
+    signTexture.colorSpace = THREE.SRGBColorSpace;
+    return new THREE.SpriteMaterial({
+      map: signTexture,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+  }
+  var sign = new THREE.Sprite(makeNeonSign("老年孩的天地", 0x00e5ff, 0xff3bd4));
+  sign.position.set(0, H + 0.4, -4.25);
+  sign.scale.set(4.8, 1.2, 1);
+  scene.add(sign);
+
+  var skyline = new THREE.Group();
+  for (var city = 0; city < 26; city += 1) {
+    var cityHeight = 0.7 + Math.random() * 2.6;
+    var cityWidth = 0.22 + Math.random() * 0.3;
+    var cityX = -7.2 + city * 0.58;
+    var cityMaterial = city % 3 === 0 ? neonPink : (city % 3 === 1 ? neonCyan : neonPurple);
+    addBox(skyline, cityWidth, cityHeight, 0.08, cityX, cityHeight / 2 + 0.4, 0, cityMaterial, 0);
+  }
+  skyline.position.set(0, 0, -5.17);
+  room.add(skyline);
+
+  addBox(room, 0.045, 6.2, 0.05, -6.4, 3.1, -5.15, neonCyan, 0);
+  addBox(room, 0.045, 6.2, 0.05, 6.4, 3.1, -5.15, neonPink, 0);
+
+  var cyberLightA = new THREE.PointLight(0x00e5ff, 2.0, 12);
+  cyberLightA.position.set(-4.5, 3.6, -1.6);
+  scene.add(cyberLightA);
+  var cyberLightB = new THREE.PointLight(0xff3bd4, 1.7, 12);
+  cyberLightB.position.set(4.5, 3.0, 0.8);
+  scene.add(cyberLightB);
 
   var running = true;
   if ('IntersectionObserver' in window) {
