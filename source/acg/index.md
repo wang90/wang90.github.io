@@ -11,14 +11,19 @@ type: acg
       <span>ACG ARCHIVE</span>
     </div>
     <nav class="acg-nav-links">
+      <a href="#acg-room">书架</a>
       <a href="#manga">漫画</a>
     </nav>
   </header>
   <main class="acg-main">
     <section class="acg-hero">
-      <p class="acg-kicker">My personal anime archive</p>
-      <h1 class="acg-title">我的二次元收藏</h1>
-      <p class="acg-intro">这里是一个独立于博客主站之外的二次元系列。目前收录我最喜欢的七部漫画：柯南、鬼灭之刃、新世纪福音战士、灌篮高手、圣斗士星矢、古惑仔和宠物小精灵。</p>
+      <p class="acg-kicker">My personal comic room</p>
+      <h1 class="acg-title">老年孩的天地</h1>
+      <p class="acg-intro">这里是我自己的漫画小屋。用 Three.js 搭了一个 3D 书架，下面收录了我最喜欢的七部漫画：柯南、鬼灭之刃、新世纪福音战士、灌篮高手、圣斗士星矢、古惑仔和宠物小精灵。</p>
+    </section>
+    <section id="acg-room" class="acg-room-section">
+      <div class="acg-room"><div class="acg-room-loading">正在搭建漫画小屋...</div></div>
+      <p class="acg-room-hint">拖动视角，看看我的漫画小屋</p>
     </section>
     <section id="manga" class="acg-section">
       <div class="acg-section-head">

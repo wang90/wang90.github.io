@@ -508,6 +508,7 @@ inject:
     - <script src="/js/home-scroll.js" defer></script>
     - <script src="/js/poet-toc.js" defer></script>
     - <script src="/js/poet-read.js" defer></script>
+    - <script type="module" src="/js/acg-room.js"></script>
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
