@@ -514,4 +514,5 @@ CDN:
   third_party_provider: jsdelivr
   version: true
   custom_format: null
-  option: null
+  option:
+    fontawesome: /fontawesome/css/all.min.css
