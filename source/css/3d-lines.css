@@ -50,3 +50,9 @@ a[href*="yuque.com"] i::before {
 #page-header.full_page #site_social_icons .social-icon i {
   filter: brightness(1.65) drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
 }
+
+/* Remove the hero social icons. Sidebar card social links stay. */
+#page-header #site_social_icons,
+#page-header.full_page #site_social_icons {
+  display: none;
+}
