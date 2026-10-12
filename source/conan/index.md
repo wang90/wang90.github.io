@@ -28,10 +28,6 @@ type: conan
     </section>
     <div class="conan-panel-carousel" id="conan-panel-carousel">
       <section id="cover-wall" class="conan-panel active">
-        <div class="conan-section-head">
-          <h2>漫画封面墙</h2>
-          <p>全部单行本完整封面</p>
-        </div>
         <div class="conan-wall" id="conan-wall"></div>
       </section>
       <section id="timeline" class="conan-panel">
