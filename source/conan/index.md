@@ -11,9 +11,8 @@ type: conan
   </header>
   <main class="conan-main">
     <section class="conan-hero">
-      <p class="conan-kicker">Detective Conan Archive</p>
-      <h1>名侦探柯南专题</h1>
-      <p class="conan-intro">这里整理了柯南漫画单行本的完整封面墙，以及按年份横向排列的漫画与剧场版时间线。慢慢看，真相只有一个。</p>
+      <h1>名探偵コナン</h1>
+      <p class="conan-subtitle">真実はいつもひとつ</p>
       <div class="conan-stats" id="conan-stats"></div>
     </section>
     <section class="conan-panel-switch">

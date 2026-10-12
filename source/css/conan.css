@@ -767,3 +767,14 @@ html.conan-mode #article-container .conan-shell figcaption {
     left: 14px;
   }
 }
+
+.conan-subtitle {
+  margin: 14px 0 0;
+  font-size: clamp(18px, 3vw, 26px);
+  letter-spacing: 0.22em;
+}
+
+html.conan-mode #article-container p.conan-subtitle {
+  color: #8cc8ff;
+  text-shadow: 0 0 18px rgba(0, 136, 255, 0.48);
+}
