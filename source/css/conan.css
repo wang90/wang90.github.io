@@ -499,3 +499,271 @@ html.conan-mode #article-container .conan-shell figcaption {
     flex-basis: min(310px, 84vw);
   }
 }
+
+/* Two-section panel carousel */
+.conan-panel-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 38px;
+  padding: 12px 14px;
+  border: 1px solid rgba(140, 170, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(5, 8, 16, 0.62);
+}
+
+.conan-panel-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.conan-tab {
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #9eb0d8;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.conan-tab:hover {
+  color: #ffffff;
+}
+
+.conan-tab.active {
+  border-color: rgba(255, 59, 92, 0.55);
+  background: rgba(255, 59, 92, 0.14);
+  color: #ffffff;
+}
+
+.conan-panel-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.conan-arrow {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(140, 170, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #d8e6ff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.conan-arrow:hover {
+  border-color: rgba(255, 59, 92, 0.7);
+  background: rgba(255, 59, 92, 0.12);
+  color: #ffffff;
+}
+
+.conan-panel-carousel {
+  margin-top: 26px;
+}
+
+.conan-panel {
+  display: none;
+}
+
+.conan-panel.active {
+  display: block;
+  animation: conanPanelIn 0.45s ease both;
+}
+
+@keyframes conanPanelIn {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Full cover wall, all volumes at once */
+.conan-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 12px;
+}
+
+.conan-cover {
+  width: 100%;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.conan-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.conan-cover-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+}
+
+/* One horizontal timeline line */
+.conan-timeline-line {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 36px 24px 30px;
+  scrollbar-width: thin;
+}
+
+.conan-timeline-line::before {
+  position: absolute;
+  top: 78px;
+  right: 24px;
+  left: 24px;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, #ff3b5c, #0088ff);
+  opacity: 0.72;
+}
+
+.conan-year-node {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 140px;
+  text-align: center;
+}
+
+.conan-year-label {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.conan-year-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto 12px;
+  border: 3px solid #050810;
+  border-radius: 999px;
+  background: #ff3b5c;
+  box-shadow: 0 0 14px rgba(255, 59, 92, 0.85);
+}
+
+.conan-year-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  min-height: 26px;
+}
+
+.conan-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.conan-icon.manga {
+  border: 1px solid rgba(0, 136, 255, 0.42);
+  background: rgba(0, 136, 255, 0.18);
+  color: #8cc8ff;
+}
+
+.conan-icon.movie {
+  border: 1px solid rgba(255, 59, 92, 0.42);
+  background: rgba(255, 59, 92, 0.18);
+  color: #ff9eb0;
+}
+
+.conan-nav-note {
+  color: #7f8bab;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+
+@media screen and (max-width: 760px) {
+  .conan-panel-switch {
+    display: block;
+  }
+
+  .conan-panel-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .conan-tab {
+    padding: 9px 8px;
+    font-size: 13px;
+  }
+
+  .conan-panel-arrows {
+    display: none;
+  }
+
+  .conan-wall {
+    grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+    gap: 9px;
+  }
+
+  .conan-year-node {
+    width: 120px;
+  }
+
+  .conan-timeline-line::before {
+    top: 74px;
+  }
+}
+
+#conan-timeline {
+  padding-left: 24px;
+}
+
+#conan-timeline::before {
+  display: block;
+  top: 78px;
+  right: 24px;
+  left: 24px;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, #ff3b5c, #0088ff);
+  opacity: 0.72;
+}
+
+@media screen and (max-width: 760px) {
+  #conan-timeline {
+    padding-left: 14px;
+  }
+
+  #conan-timeline::before {
+    top: 74px;
+    right: 14px;
+    left: 14px;
+  }
+}

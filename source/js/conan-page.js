@@ -1,5 +1,5 @@
 /*
- * Render the Detective Conan cover carousel and timeline carousel.
+ * Render the Detective Conan cover wall and horizontal timeline.
  */
 (function () {
   'use strict';
@@ -40,7 +40,7 @@
 
     renderWall(wall, volumes);
     renderTimeline(timeline, volumes, movies);
-    initCarousels();
+    initPanelCarousel();
   }
 
   function renderWall(wall, volumes) {
@@ -94,15 +94,17 @@
     var fragment = document.createDocumentFragment();
 
     years.forEach(function (year) {
-      var yearCard = document.createElement('div');
-      yearCard.className = 'conan-year';
+      var node = document.createElement('div');
+      node.className = 'conan-year-node';
 
-      var heading = document.createElement('h3');
-      heading.textContent = year + ' 年';
-      yearCard.appendChild(heading);
+      node.appendChild(text('div', 'conan-year-label', year + ' 年'));
 
-      var eventsBox = document.createElement('div');
-      eventsBox.className = 'conan-events';
+      var dot = document.createElement('span');
+      dot.className = 'conan-year-dot';
+      node.appendChild(dot);
+
+      var icons = document.createElement('div');
+      icons.className = 'conan-year-icons';
 
       byYear[year].sort(function (a, b) {
         if (a.date === b.date) return 0;
@@ -110,87 +112,90 @@
       });
 
       byYear[year].forEach(function (event) {
-        var item = document.createElement('div');
-        item.className = 'conan-event ' + event.type;
+        var icon = document.createElement('span');
+        icon.className = 'conan-icon ' + event.type;
+        icon.title = event.title;
 
-        var dateText = event.date ? event.date.slice(5) : '待定';
-        var dateEl = text('div', 'conan-event-date', dateText);
-        var titleEl = document.createElement('div');
-        titleEl.className = 'conan-event-title';
-        titleEl.appendChild(text('span', 'conan-event-tag', event.type === 'movie' ? '剧场版' : '漫画'));
-        titleEl.appendChild(document.createTextNode(event.title));
-
-        item.appendChild(dateEl);
-        item.appendChild(titleEl);
-        eventsBox.appendChild(item);
+        var glyph = document.createElement('i');
+        glyph.className = event.type === 'movie' ? 'fas fa-film' : 'fas fa-book';
+        icon.appendChild(glyph);
+        icons.appendChild(icon);
       });
 
-      yearCard.appendChild(eventsBox);
-      fragment.appendChild(yearCard);
+      node.appendChild(icons);
+      fragment.appendChild(node);
     });
 
     timeline.appendChild(fragment);
   }
 
-  function initCarousels() {
-    var carousels = Array.prototype.slice.call(document.querySelectorAll('.conan-carousel'));
+  function initPanelCarousel() {
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.conan-panel'));
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.conan-tab'));
+    var prev = document.querySelector('.conan-arrow.prev');
+    var next = document.querySelector('.conan-arrow.next');
+    var carousel = document.querySelector('#conan-panel-carousel');
+    var current = 0;
+    var timer = null;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    carousels.forEach(function (carousel) {
-      var track = carousel.querySelector('.conan-carousel-track');
-      if (track === null) return;
+    if (panels.length === 0) return;
 
-      var trackId = track.id;
-      var prev = document.querySelector('.conan-carousel-btn.prev[data-target="' + trackId + '"]');
-      var next = document.querySelector('.conan-carousel-btn.next[data-target="' + trackId + '"]');
-      var timer = null;
+    function show(index) {
+      current = index;
+      panels.forEach(function (panel, i) {
+        panel.classList.toggle('active', i === index);
+      });
+      tabs.forEach(function (tab, i) {
+        tab.classList.toggle('active', i === index);
+      });
+    }
 
-      function step(direction) {
-        var amount = Math.max(240, track.clientWidth * 0.72);
-        track.scrollBy({ left: direction * amount, behavior: 'smooth' });
-      }
+    function step(direction) {
+      var total = panels.length;
+      show((current + direction + total) % total);
+    }
 
-      if (prev) {
-        prev.addEventListener('click', function () {
-          step(-1);
-        });
-      }
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        show(parseInt(tab.getAttribute('data-panel'), 10));
+      });
+    });
 
-      if (next) {
-        next.addEventListener('click', function () {
-          step(1);
-        });
-      }
+    if (prev) {
+      prev.addEventListener('click', function () {
+        step(-1);
+      });
+    }
 
-      function advance() {
-        var maxScroll = track.scrollWidth - track.clientWidth;
-        if (track.scrollLeft >= maxScroll - 8) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: Math.max(220, track.clientWidth * 0.55), behavior: 'smooth' });
-        }
-      }
+    if (next) {
+      next.addEventListener('click', function () {
+        step(1);
+      });
+    }
 
-      function startAuto() {
-        if (reduceMotion === true || timer !== null) return;
-        timer = window.setInterval(advance, 4200);
-      }
+    function startAuto() {
+      if (reduceMotion === true) return;
+      if (timer) return;
+      timer = window.setInterval(function () {
+        step(1);
+      }, 7000);
+    }
 
-      function stopAuto() {
-        if (timer === null) return;
-        window.clearInterval(timer);
-        timer = null;
-      }
+    function stopAuto() {
+      if (timer === null) return;
+      window.clearInterval(timer);
+      timer = null;
+    }
 
+    if (carousel) {
       carousel.addEventListener('pointerenter', stopAuto);
       carousel.addEventListener('pointerleave', startAuto);
-      carousel.addEventListener('pointerdown', stopAuto);
-      carousel.addEventListener('pointerup', startAuto);
       carousel.addEventListener('touchstart', stopAuto, { passive: true });
       carousel.addEventListener('touchend', startAuto, { passive: true });
+    }
 
-      startAuto();
-    });
+    startAuto();
   }
 
   ready(init);
