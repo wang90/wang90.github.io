@@ -1,5 +1,5 @@
 /*
- * Render the Detective Conan cover wall and horizontal timeline.
+ * Render the Detective Conan cover wall and movie cards.
  */
 (function () {
   'use strict';
@@ -22,10 +22,10 @@
   function init() {
     var data = window.CONAN_DATA;
     var wall = document.querySelector('#conan-wall');
-    var timeline = document.querySelector('#conan-timeline');
+    var moviesBox = document.querySelector('#conan-movies');
     var stats = document.querySelector('#conan-stats');
 
-    if (data === null || data === undefined || wall === null || timeline === null) return;
+    if (data === null || data === undefined || wall === null || moviesBox === null) return;
 
     var volumes = data.volumes || [];
     var movies = data.movies || [];
@@ -39,7 +39,7 @@
     }
 
     renderWall(wall, volumes);
-    renderTimeline(timeline, volumes, movies);
+    renderMovies(moviesBox, movies);
     initPanelCarousel();
   }
 
@@ -70,63 +70,45 @@
     wall.appendChild(fragment);
   }
 
-  function renderTimeline(timeline, volumes, movies) {
-    var byYear = {};
-
-    function addEvent(year, date, type, title) {
-      if (year === '' || year === null || year === undefined || year === 0) return;
-      if (byYear[year] === undefined) byYear[year] = [];
-      byYear[year].push({ date: date, type: type, title: title });
-    }
-
-    volumes.forEach(function (volume) {
-      addEvent(volume.year, volume.date, 'manga', '漫画 第 ' + volume.n + ' 卷');
-    });
-
-    movies.forEach(function (movie) {
-      addEvent(movie.year, movie.date, 'movie', '剧场版 第 ' + movie.n + ' 部：' + movie.zh);
-    });
-
-    var years = Object.keys(byYear).map(Number).sort(function (a, b) {
-      return a - b;
-    });
-
+  function renderMovies(container, movies) {
     var fragment = document.createDocumentFragment();
 
-    years.forEach(function (year) {
-      var node = document.createElement('div');
-      node.className = 'conan-year-node';
+    movies.forEach(function (movie) {
+      var card = document.createElement('article');
+      card.className = 'conan-movie-card';
 
-      node.appendChild(text('div', 'conan-year-label', year + ' 年'));
+      var cover = document.createElement('div');
+      cover.className = 'conan-movie-cover';
+      if (movie.cover) {
+        var img = document.createElement('img');
+        img.src = movie.cover;
+        img.alt = '剧场版第 ' + movie.n + ' 部 ' + movie.zh + ' 封面';
+        img.loading = 'lazy';
+        cover.appendChild(img);
+      } else {
+        cover.className = 'conan-movie-cover conan-movie-cover-placeholder';
+        cover.textContent = '第 ' + movie.n + ' 部';
+      }
 
-      var dot = document.createElement('span');
-      dot.className = 'conan-year-dot';
-      node.appendChild(dot);
+      var info = document.createElement('div');
+      info.className = 'conan-movie-info';
 
-      var icons = document.createElement('div');
-      icons.className = 'conan-year-icons';
+      var order = text('span', 'conan-movie-order', '剧场版 第 ' + movie.n + ' 部');
+      var title = text('h3', 'conan-movie-title', movie.zh);
+      var jp = text('p', 'conan-movie-jp', movie.jp || movie.title);
+      var date = text('p', 'conan-movie-date', movie.date || '待定');
 
-      byYear[year].sort(function (a, b) {
-        if (a.date === b.date) return 0;
-        return a.date < b.date ? -1 : 1;
-      });
+      info.appendChild(order);
+      info.appendChild(title);
+      info.appendChild(jp);
+      info.appendChild(date);
 
-      byYear[year].forEach(function (event) {
-        var icon = document.createElement('span');
-        icon.className = 'conan-icon ' + event.type;
-        icon.title = event.title;
-
-        var glyph = document.createElement('i');
-        glyph.className = event.type === 'movie' ? 'fas fa-film' : 'fas fa-book';
-        icon.appendChild(glyph);
-        icons.appendChild(icon);
-      });
-
-      node.appendChild(icons);
-      fragment.appendChild(node);
+      card.appendChild(cover);
+      card.appendChild(info);
+      fragment.appendChild(card);
     });
 
-    timeline.appendChild(fragment);
+    container.appendChild(fragment);
   }
 
   function initPanelCarousel() {

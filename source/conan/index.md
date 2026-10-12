@@ -18,7 +18,7 @@ type: conan
     <section class="conan-panel-switch">
       <div class="conan-panel-tabs">
         <button class="conan-tab active" type="button" data-panel="0">漫画封面墙</button>
-        <button class="conan-tab" type="button" data-panel="1">漫画与剧场版时间线</button>
+        <button class="conan-tab" type="button" data-panel="1">剧场版</button>
       </div>
       <div class="conan-panel-arrows">
         <button class="conan-arrow prev" type="button">‹</button>
@@ -29,12 +29,8 @@ type: conan
       <section id="cover-wall" class="conan-panel active">
         <div class="conan-wall" id="conan-wall"></div>
       </section>
-      <section id="timeline" class="conan-panel">
-        <div class="conan-section-head">
-          <h2>漫画与剧场版时间线</h2>
-          <p>横向一条线，看每年出了什么</p>
-        </div>
-        <div class="conan-timeline-line" id="conan-timeline"></div>
+      <section id="movies" class="conan-panel">
+        <div class="conan-movie-grid" id="conan-movies"></div>
       </section>
     </div>
   </main>

@@ -778,3 +778,115 @@ html.conan-mode #article-container p.conan-subtitle {
   color: #8cc8ff;
   text-shadow: 0 0 18px rgba(0, 136, 255, 0.48);
 }
+
+/* Movie cards: left cover, right info */
+.conan-movie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.conan-movie-card {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  padding: 14px;
+  border: 1px solid rgba(140, 170, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(5, 8, 16, 0.68);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.conan-movie-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 59, 92, 0.56);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.42), 0 0 18px rgba(255, 59, 92, 0.08);
+}
+
+.conan-movie-cover {
+  display: flex;
+  flex: 0 0 116px;
+  align-items: center;
+  justify-content: center;
+}
+
+.conan-movie-cover img {
+  display: block;
+  width: 116px;
+  max-height: 168px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.conan-movie-cover-placeholder {
+  width: 116px;
+  min-height: 158px;
+  color: #9eb0d8;
+  font-size: 13px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 59, 92, 0.2), rgba(0, 136, 255, 0.2));
+  border-radius: 8px;
+}
+
+.conan-movie-info {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+html.conan-mode #article-container span.conan-movie-order {
+  margin-bottom: 6px;
+  color: #ff9eb0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+html.conan-mode #article-container h3.conan-movie-title {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+html.conan-mode #article-container p.conan-movie-jp {
+  margin: 0 0 8px;
+  color: #8cc8ff;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+html.conan-mode #article-container p.conan-movie-date {
+  margin: 0;
+  color: #9eb0d8;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+@media screen and (max-width: 860px) {
+  .conan-movie-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .conan-movie-card {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .conan-movie-cover {
+    flex-basis: 96px;
+  }
+
+  .conan-movie-cover img {
+    width: 96px;
+    max-height: 142px;
+  }
+
+  .conan-movie-cover-placeholder {
+    width: 96px;
+    min-height: 134px;
+  }
+}
