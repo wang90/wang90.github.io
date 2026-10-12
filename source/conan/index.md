@@ -16,22 +16,32 @@ type: conan
     <section class="conan-hero">
       <p class="conan-kicker">Detective Conan Archive</p>
       <h1>名侦探柯南专题</h1>
-      <p class="conan-intro">这里整理了柯南漫画单行本的封面墙，以及按年份排列的漫画卷数与剧场版时间线。慢慢看，真相只有一个。</p>
+      <p class="conan-intro">这里整理了柯南漫画单行本的完整封面轮播，以及按年份排列的漫画与剧场版时间线。慢慢看，真相只有一个。</p>
       <div class="conan-stats" id="conan-stats"></div>
     </section>
     <section id="cover-wall" class="conan-section">
       <div class="conan-section-head">
         <h2>漫画封面墙</h2>
-        <p>单行本封面拼成的画墙</p>
+        <div class="conan-carousel-nav">
+          <button class="conan-carousel-btn prev" type="button" data-target="conan-wall">‹</button>
+          <button class="conan-carousel-btn next" type="button" data-target="conan-wall">›</button>
+        </div>
       </div>
-      <div class="conan-wall" id="conan-wall"></div>
+      <div class="conan-carousel">
+        <div class="conan-carousel-track" id="conan-wall"></div>
+      </div>
     </section>
     <section id="timeline" class="conan-section">
       <div class="conan-section-head">
         <h2>漫画与剧场版时间线</h2>
-        <p>按年份整理</p>
+        <div class="conan-carousel-nav">
+          <button class="conan-carousel-btn prev" type="button" data-target="conan-timeline">‹</button>
+          <button class="conan-carousel-btn next" type="button" data-target="conan-timeline">›</button>
+        </div>
       </div>
-      <div class="conan-timeline" id="conan-timeline"></div>
+      <div class="conan-carousel">
+        <div class="conan-carousel-track" id="conan-timeline"></div>
+      </div>
     </section>
   </main>
   <footer class="conan-footer">真相只有一个。</footer>
