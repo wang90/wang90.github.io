@@ -499,6 +499,7 @@ inject:
     - <link rel="stylesheet" href="/css/acg.css">
     - <link rel="stylesheet" href="/css/poet.css">
     - <link rel="stylesheet" href="/css/conan.css">
+    - <link rel="stylesheet" href="/css/home-redesign.css">
     - >-
       <script>if (location.pathname.indexOf('/acg/') === 0) { document.documentElement.classList.add('acg-mode');
       }</script>
@@ -508,12 +509,16 @@ inject:
     - >-
       <script>if (location.pathname.indexOf('/conan/') === 0) { document.documentElement.classList.add('conan-mode');
       }</script>
+    - >-
+      <script>if (location.pathname === '/' || location.pathname === '/index.html') {
+      document.documentElement.classList.add('home-redesign'); }</script>
   bottom:
     - <script src="/js/3d-lines.js" defer></script>
     - <script src="/js/home-scroll.js" defer></script>
     - <script src="/js/poet-toc.js" defer></script>
     - <script src="/js/poet-read.js" defer></script>
     - <script type="module" src="/js/acg-room.js"></script>
+    - <script src="/js/home-redesign.js" defer></script>
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
