@@ -518,7 +518,6 @@ inject:
     - <script src="/js/poet-read.js" defer></script>
     - <script type="module" src="/js/acg-room.js"></script>
     - <script src="/js/home-redesign.js" defer></script>
-    - <script src="/js/home-meteors.js" defer></script>
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
