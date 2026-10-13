@@ -7,7 +7,7 @@ html.home-redesign #page-header.full_page {
   background-color: #070b1c;
   background-image:
     linear-gradient(180deg, rgba(5, 8, 24, 0.42) 0%, rgba(5, 8, 24, 0.72) 52%, rgba(5, 8, 24, 0.92) 100%),
-    url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=82');
+    url('/img/home-bg.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -320,3 +320,15 @@ html.home-redesign #page-header.full_page #nav {
   padding-right: max(20px, calc((100vw - 1220px) / 2));
 }
 
+
+/* Animated stars and shooting stars */
+html.home-redesign #page-header.full_page .home-sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.95;
+  mix-blend-mode: screen;
+}
