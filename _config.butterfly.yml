@@ -513,7 +513,6 @@ inject:
       <script>if (location.pathname === '/' || location.pathname === '/index.html') {
       document.documentElement.classList.add('home-redesign'); }</script>
   bottom:
-    - <script src="/js/3d-lines.js" defer></script>
     - <script src="/js/home-scroll.js" defer></script>
     - <script src="/js/poet-toc.js" defer></script>
     - <script src="/js/poet-read.js" defer></script>

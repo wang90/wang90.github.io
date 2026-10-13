@@ -313,3 +313,9 @@ html.home-redesign #recent-posts .content {
     margin-top: 10px;
   }
 }
+
+/* Align the glass navigation with the main content column. */
+html.home-redesign #page-header.full_page #nav {
+  padding-left: max(20px, calc((100vw - 1220px) / 2));
+  padding-right: max(20px, calc((100vw - 1220px) / 2));
+}
